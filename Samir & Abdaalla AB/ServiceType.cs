@@ -17,6 +17,21 @@ namespace Samir___Abdaalla_AB
     {
         bilregnr,
     }
-    
-}
+    public static class ServicePrice
+    {
+       private static readonly Dictionary<ServiceType, decimal> prices = new Dictionary<ServiceType, decimal>
+        {
+            { ServiceType.Hjulbyte, 700 },
+            { ServiceType.Däckhotell, 1500 },
+            { ServiceType.Hjulinställning, 600 },
+            { ServiceType.Däckbyte, 500 }
+        };
+
+        public static decimal GetPrice(ServiceType serviceType)
+        {
+            return prices[serviceType];
+        }
+      }
+    }
+
 
